@@ -116,7 +116,7 @@ body {
   display: flex;
   border-radius: 15px;
   position: absolute;
-  margin: 10%;
+  margin: 5%;
   transition: 1000ms ease;
 }
 
