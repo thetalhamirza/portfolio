@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">        
+        <div class="home">
+            <h1>Hi, this is Talha.</h1>
+        </div>
+        <div class="about">
+            <h2>About Me</h2>
+            <p>I’m a BSCS student with a keen interest in cybersecurity and IT.<br><br> I’m particularly interested in penetration testing and am actively training to master the skills needed to identify and fix vulnerabilities in digital systems.
+
+                <br><br>For me, cybersecurity is more than just a field—it’s a way to make a real difference by protecting people and data in an increasingly digital world. <br><br>I’m constantly learning, exploring new tools, and working on sharpening my problem-solving skills to prepare for a career in this exciting and ever-evolving industry.
+                
+                <br><br>Thanks for stopping by! Do check out my portfolio and certifications down below.</p>
+        </div>
+        <div class="certs">
+            <div class="cert-text">
+                <h2>Certifications</h2>
+                <p>Check out more on my <a href="https://www.linkedin.com/in/thetalhamirza/details/certifications/">LinkedIn</a></p>
+            </div>
+            <div class="cert-box">
+                <div class="cert-images">
+                    <img src="certs/cert-G1.jfif" alt="Certificate 1" class="cert-image">
+                    <img src="certs/cert-G2.jfif" alt="Certificate 2" class="cert-image">
+                    <img src="certs/cert-G3.jpg" alt="Certificate 3" class="cert-image">
+                    <img src="certs/cert-CC.png" alt="Certificate 4" class="cert-image">
+                    <!-- Add more certificates here -->
+                </div>
+        
+                <!-- Navigation Arrows -->
+                <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
+                <a class="next" onclick="moveSlide(1)">&#10095;</a>
+            </div>
+                
+
+            </div>
+        </div>
+        <div class="portfolio">
+            <h2>Portfolio</h2>
+            <p>Coming soon: A showcase of my projects and achievements.</p>
+        </div>
+        <div class="blog">
+            <h2>Blog</h2>
+            <p>I post writeups</p>
+        </div>
+        <div class="contact">
+            <h2>Get in touch</h2>
+            <p>A form will be added here</p>
+        </div>
+    </div>
+    <div class="scroll-dots">
+        <div class="dot" data-section="home"></div>
+        <div class="dot" data-section="about"></div>
+        <div class="dot" data-section="certifications"></div>
+        <div class="dot" data-section="portfolio"></div>
+        <div class="dot" data-section="blog"></div>
+        <div class="dot" data-section="contact"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
