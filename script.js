@@ -51,6 +51,8 @@ document.querySelectorAll('.scroll-dots .dot').forEach((dot, index) => {
 window.addEventListener('load', () => {
     const dots = document.querySelectorAll('.scroll-dots .dot');
     dots[0].classList.add('active'); // Make the first dot active
+    const sections = document.querySelectorAll('.home, .about, .certs, .portfolio, .blog, .contact');
+    sections[0].scrollIntoView({ behavior: 'smooth' });
 });
 
 
@@ -96,4 +98,15 @@ window.addEventListener('load', () => {
 window.addEventListener('load', () => {
     const heading = document.querySelector('.home h1');
     heading.classList.add('load');
+
+
+    const preloader = document.querySelector('.preloader');
+    preloader.style.transition = "opacity 0.5s ease";
+    preloader.style.opacity = "0";
+
+    setTimeout(() => {
+    preloader.style.display = "none";
+  }, 500);
 });
+
+
