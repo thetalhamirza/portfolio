@@ -18,7 +18,7 @@ window.addEventListener('scroll', () => {
 
 // Add scroll detection to highlight the active section's dot
 window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('.home, .about, .certs, .portfolio, .blog, .contact');
+    const sections = document.querySelectorAll('.home, .about, .certs, .portfolio, .learning, .contact');
     const dots = document.querySelectorAll('.scroll-dots .dot');
 
     
@@ -42,7 +42,7 @@ window.addEventListener('scroll', () => {
 // Add click event listeners to dots for smooth scrolling
 document.querySelectorAll('.scroll-dots .dot').forEach((dot, index) => {
     dot.addEventListener('click', () => {
-        const sections = document.querySelectorAll('.home, .about, .certs, .portfolio, .blog, .contact');
+        const sections = document.querySelectorAll('.home, .about, .certs, .portfolio, .learning, .contact');
         sections[index].scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to section
     });
 });
@@ -51,7 +51,7 @@ document.querySelectorAll('.scroll-dots .dot').forEach((dot, index) => {
 window.addEventListener('load', () => {
     const dots = document.querySelectorAll('.scroll-dots .dot');
     dots[0].classList.add('active'); // Make the first dot active
-    const sections = document.querySelectorAll('.home, .about, .certs, .portfolio, .blog, .contact');
+    const sections = document.querySelectorAll('.home, .about, .certs, .portfolio, .learning, .contact');
     sections[0].scrollIntoView({ behavior: 'smooth' });
 });
 
@@ -96,8 +96,8 @@ window.addEventListener('load', () => {
 
 // Trigger the transition when the page loads
 window.addEventListener('load', () => {
-    const heading = document.querySelector('.home h1');
-    heading.classList.add('load');
+    // const heading = document.querySelector('.home h1');
+    // heading.classList.add('load');
 
 
     const preloader = document.querySelector('.preloader');

@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="footer.css">
 </head>
 <body>
     <div class="preloader">
@@ -20,7 +21,7 @@
         <div class="about">
             <h2>About Me</h2>
             <p>I’m a BSCS student with a keen interest in cybersecurity and IT.<br><br> I’m particularly interested in penetration testing and am actively training to master the skills needed to identify and fix vulnerabilities in digital systems.
-
+        
                 <br><br>For me, cybersecurity is more than just a field—it’s a way to make a real difference by protecting people and data in an increasingly digital world. <br><br>I’m constantly learning, exploring new tools, and working on sharpening my problem-solving skills to prepare for a career in this exciting and ever-evolving industry.
                 
                 <br><br>Thanks for stopping by! Do check out my portfolio and certifications down below.</p>
@@ -32,32 +33,87 @@
             </div>
             <div class="cert-box">
                 <div class="cert-images">
-                    <img src="certs/cert-G1.jfif" alt="Certificate 1" class="cert-image">
-                    <img src="certs/cert-G2.jfif" alt="Certificate 2" class="cert-image">
-                    <img src="certs/cert-G3.jpg" alt="Certificate 3" class="cert-image">
-                    <img src="certs/cert-CC.png" alt="Certificate 4" class="cert-image">
-                    <!-- Add more certificates here -->
+                    <img src="assets/cert-G1.jfif" alt="Certificate 1" class="cert-image">
+                    <img src="assets/cert-G2.jfif" alt="Certificate 2" class="cert-image">
+                    <img src="assets/cert-G3.jpg" alt="Certificate 3" class="cert-image">
+                    <img src="assets/cert-CC.png" alt="Certificate 4" class="cert-image">
                 </div>
         
-                <!-- Navigation Arrows -->
                 <a class="prev" onclick="moveSlide(-1)">&#10094;</a>
                 <a class="next" onclick="moveSlide(1)">&#10095;</a>
             </div>
                 
-
+        
             </div>
         </div>
         <div class="portfolio">
-            <h2>Portfolio</h2>
-            <p>Coming soon: A showcase of my projects and achievements.</p>
-        </div>
-        <div class="blog">
-            <h2>Blog</h2>
-            <p>I post writeups</p>
+            <div class="portfolio-content">
+                <div class="portfolio-text">
+        
+                    <h2>Projects</h2>
+                    <p>A showcase of my projects and achievements.</p>
+                    
+                </div>
+                <div class="projectList">
+                    <div class="project">
+                        <a href="https://github.com/thetalhamirza/LockBox" target="_blank">
+                            <h3>LockBox</h3>
+                            <p>A command-line password manager built with Python</p>
+                        </a>
+                    </div>
+                    <div class="project">
+                        <a href="https://github.com/thetalhamirza/botium-toys-security-audit" target="_blank">
+        
+                            <h3>Securit Audit Report</h3>
+                            <p>Security audit conducted for a fictional company having a number of vulnerabilities.</p>
+                        </a>
+                        
+                    </div>
+                    <!-- <div class="project">
+                        <h3>Project Three</h3>
+                        <p>Brief description of the project.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Project Four</h3>
+                        <p>Brief description of the project.</p>
+                    </div>
+                    <div class="project">
+                        <h3>Project Five</h3>
+                        <p>Brief description of the project.</p>
+                    </div> -->
+        
+                      <a href="projects.html" target="_blank" class="viewAllBtn">View All Projects</a>
+                </div>
+                
+            </div>
+        </div> 
+        <div class="learning">
+            <h2>What am I learning?</h2>
+            <p>I am actively learning and enhancing my skillset most of the time. These are some skills/certifications I am currently working my way towards.</p>
+            <div class="skills">
+        
+                <div class="skill">
+                    <img src="assets/google-logo.png" alt="Project 1">
+                    <h3>Google Cybersecurity Professional</h3>
+                </div>
+                <div class="skill">
+                    <img src="assets/pswg-logo.png" alt="Project 2">
+                    <h3>Portswigger Academy</h3>
+                </div>
+                <div class="skill">
+                    <img src="assets/secplus-logo.png" alt="Project 3">
+                    <h3>CompTIA Security+</h3>
+                </div>
+            </div>
         </div>
         <div class="contact">
             <h2>Get in touch</h2>
-            <p>A form will be added here</p>
+            <p>I'd love to hear from you! Whether you have questions, feedback, or just want to say hello, feel free to reach out.</p>
+            <p class="socials">Email: talhaavgstudent@gmail.com</p>
+            <p class="socials">LinkedIn: <a href="https://www.linkedin.com/in/thetalhamirza/?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BTVh86WMsQZKdTq95FHUh6A%3D%3D">thetalhamirza</a></p>
+            <p class="socials">GitHub: <a href="https://github.com/thetalhamirza">thetalhamirza</a></p>
+            <p class="socials">Instagram: <a href="">talhamizzza</a></p>
+            <p class="socials">Or, just fill out <a href="https://docs.google.com/forms/d/e/1FAIpQLScm2k82eZUay2ATu2soZDrS1VqJfF_VRo9L_0wBXCoueU0O4Q/viewform?usp=header">this form.</a></p>
         </div>
     </div>
     <div class="scroll-dots">
@@ -65,9 +121,21 @@
         <div class="dot" data-section="about"></div>
         <div class="dot" data-section="certifications"></div>
         <div class="dot" data-section="portfolio"></div>
-        <div class="dot" data-section="blog"></div>
+        <div class="dot" data-section="learning"></div>
         <div class="dot" data-section="contact"></div>
     </div>
+    <footer>
+        <div class="footer-container">
+            <p>Yes, I designed this website 😁</p>
+            <p class="footer-text">© 2025 Talha | All Rights Reserved</p>
+            <div class="social-links">
+                <a href="https://github.com/your-github" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+                <a href="mailto:your-email@example.com">Email</a>
+            </div>
+        </div>
+    </footer>
+    
     <script src="script.js"></script>
 </body>
 </html>

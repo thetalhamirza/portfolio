@@ -198,7 +198,11 @@ body {
 
 .portfolio h2 {
   font-size: 2.5rem;
-  color: #000000;
+  /* color: #000000; */
+  background: linear-gradient(90deg, #9d4edd, #3a0ca3);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .portfolio p {
@@ -207,27 +211,113 @@ body {
   color: #000000;
 }
 
-
-.blog {
+.portfolio-content {
   display: flex;
-  align-items: flex-start;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.portfolio-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically centers the text */
+  text-align: left;
+}
+
+.projectList {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* Aligns projects to the right */
+}
+
+.project {
+  width: 300px;   
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 25px;
+  transition: 1000ms ease;
+}
+
+.project:hover  {
+  transform: scale(1.05);
+}
+
+.project a {
+  text-decoration: none;
+}
+.project a:visited {
+  text-decoration: none;
+}
+
+.viewAllBtn {
+  display: flex;
+  margin-top: 30px;
+  margin-right: 70px;
+  padding: 10px 20px;
+  color: #9d4edd;
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 50%;
+  transition: 800ms ease;
+}
+
+.viewAllBtn:hover {
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+.learning {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  padding-left: 10%;
+  /* padding-left: 10%; */
   height: 100vh;
   flex-direction: column;
 }
 
-.blog h2 {
+.learning h2 {
   font-size: 2.5rem;
   color: white;
 }
 
-.blog p {
-  font-size: 1.2rem;
-  max-width: 600px;
+.learning p {
+  text-align: center;
+  font-size: 1.1rem;
+  max-width: 500px;
   color: white;
 }
 
+.skills {
+  display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.skill {
+  width: 200px;
+    background: #e7e7e7;
+    padding: 15px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: 1000ms ease;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+}
+
+.skill img {
+  max-width: 150px;
+  border-radius: 15px;
+}
 
 .contact {
   display: flex;
@@ -249,6 +339,18 @@ body {
   font-size: 1.2rem;
   max-width: 600px;
   color: #000000;
+}
+
+.contact .socials {
+  font-size: 1rem;
+  
+}
+
+.contact a {
+  color: #000;
+}
+.contact a:visited {
+  color: #000;
 }
 
 .certs p {
@@ -278,6 +380,10 @@ body {
   transition: opacity 500ms ease, transform 500ms ease;
 }
 
+.scroll-dots .dot:hover {
+  cursor: pointer;
+}
+
 /* Active Dot */
 .scroll-dots .dot.active {
   opacity: 1; /* Fully visible */
@@ -300,3 +406,6 @@ body {
     50%  {background-color: #0d000e}
     100%  {background-color: #000;}
 }
+
+
+
