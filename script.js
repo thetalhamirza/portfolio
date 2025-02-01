@@ -96,8 +96,8 @@ window.addEventListener('load', () => {
 
 // Trigger the transition when the page loads
 window.addEventListener('load', () => {
-    // const heading = document.querySelector('.home h1');
-    // heading.classList.add('load');
+    const heading = document.querySelector('.home h1');
+    heading.classList.add('load');
 
 
     const preloader = document.querySelector('.preloader');

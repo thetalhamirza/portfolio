@@ -10,7 +10,7 @@ body {
 .preloader {
   background: #000;
   width: 100%;
-  height: 100vh;
+  height: 150vh;
   z-index: 10;
   position: fixed;
   animation: backgroundAnimation 3s linear infinite;
