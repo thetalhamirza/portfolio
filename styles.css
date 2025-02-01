@@ -3,6 +3,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-color: #0d000e;
+    /* margin: 0; */
   }
 
 
@@ -243,6 +244,10 @@ body {
   transition: 1000ms ease;
 }
 
+.project p {
+  font-size: 1rem;
+}
+
 .project:hover  {
   transform: scale(1.05);
 }
@@ -256,7 +261,7 @@ body {
 
 .viewAllBtn {
   display: flex;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-right: 70px;
   padding: 10px 20px;
   color: #9d4edd;
@@ -294,24 +299,24 @@ body {
 
 .skills {
   display: flex;
-    justify-content: center;
-    gap: 20px;
-    flex-wrap: wrap;
-    margin-top: 40px;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 40px;
 }
 
 .skill {
   width: 200px;
-    background: #e7e7e7;
-    padding: 15px;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    transition: 1000ms ease;
+  background: #e7e7e7;
+  padding: 15px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: 1000ms ease;
 }
 
 .skill:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .skill img {
