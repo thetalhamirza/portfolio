@@ -9,6 +9,32 @@ body {
     flex-direction: column;
 }
 
+.links {
+    display: flex;
+}
+
+.backlink {
+    display: flex;
+    margin-top: 12px;
+    margin-left: 15px;
+    color: #9d4edd;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 70%;
+    transition: 800ms ease;
+}
+
+.repo {
+    display: flex;
+    margin-top: 12px;
+    margin-left: 39vw;
+    color: #9d4edd;
+    text-decoration: none;
+    font-weight: bold;
+    opacity: 70%;
+    transition: 800ms ease;
+}
+
 .title h1 {
     /* color: white; */
     background: linear-gradient(90deg, #9d4edd, #3a0ca3);
@@ -17,6 +43,7 @@ body {
     color: transparent;
     text-align: center;
     margin: 50px;
+    margin-top: 65px;
     font-size: 3.4rem;
 }
 
@@ -70,4 +97,15 @@ body {
     margin: 0 15px 15px 15px;
     z-index: 1;
 } */
+
+.project a {
+    display: block;
+    height: 300px;
+    color: black;
+    text-decoration: none;
+}
+.project a:visited {
+    color: black;
+    text-decoration: none;
+}
 
