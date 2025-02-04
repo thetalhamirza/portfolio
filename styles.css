@@ -6,12 +6,16 @@ body {
     /* margin: 0; */
   }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 .preloader {
   background: #000;
   width: 100%;
   height: 150vh;
-  z-index: 10;
+  z-index: 100;
   position: fixed;
   animation: backgroundAnimation 3s linear infinite;
 }
@@ -32,6 +36,72 @@ body {
   animation: dotsAnimation 1200ms infinite steps(5); /* Animate through 5 steps */
 }
 
+/* .nav h3 {
+  color: #9d4edd;
+  opacity: 60%;
+  position: fixed;
+  margin: 15px 15px;
+  transition: 500ms ease;
+} */
+
+/*  */
+/*  */
+
+/* Navigation Container */
+.nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  z-index: 10;
+}
+
+/* Toggle Symbol */
+.nav h3 {
+  color: #9d4edd;
+  opacity: 60%;
+  margin: 15px;
+  transition: 500ms ease;
+  cursor: pointer;
+}
+
+/* Navbar (Hidden by Default) */
+.navbar {
+  display: none;
+  opacity: 0;
+  padding: 10px 20px;
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the links */
+  gap: 25px;               /* Space between links */
+  transition: opacity 500ms ease;
+}
+
+/* Navbar Links */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  transition: color 500ms ease;
+}
+
+/* Hover Effect on Links */
+.navbar a:hover {
+  color: #9d4edd;
+}
+
+/* Show Navbar on Hover */
+.nav:hover .navbar {
+  display: flex;
+  opacity: 1;
+}
+
+
+/*  */
+/*  */
+
 .container {
   width: 100%;
 }
@@ -45,7 +115,7 @@ body {
 }
 
 .home h1 {
-  font-size: 3rem;
+  font-size: 3.3vw;
   background: linear-gradient(90deg, #9d4edd, #3a0ca3);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -95,7 +165,7 @@ body {
 }
 
 .certs h2 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: white;
   padding-right: 7%;
 }
@@ -306,7 +376,7 @@ body {
 }
 
 .skill {
-  width: 200px;
+  width: calc(33.33% - 20px);
   background: #e7e7e7;
   padding: 15px;
   border-radius: 20px;
@@ -414,3 +484,99 @@ body {
 
 
 
+@media (max-width: 768px) {  /* For tablets */
+  .home h1 {
+    font-size: 6vw;
+  }
+  .about p {
+    font-size: 1rem;
+    padding: 10px;
+  }
+  .cert-images img.active {
+    width: 100%; /* Full-width images */
+    margin: 0;
+  }
+
+  .skill {
+    width: 50%; /* Two items per row on tablets */
+  }
+}
+
+@media (max-width: 480px) {  /* For smartphones */
+  
+  body {
+    margin: 0;
+  }
+
+  .home {
+    padding-left: 0;
+  }
+  
+  .home h1 {
+    font-size: 8vw;
+    text-align: center;
+    padding: 0 10px;
+  }
+  .navbar {
+    flex-direction: column; /* Stack navbar links vertically */
+  }
+  /* .project {
+    padding: 10px;
+  } */
+
+  .about p {
+    max-width: 75%;
+  }
+
+  .scroll-dots {
+    right: 10px;
+  }
+
+  .certs {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .certs h2 {
+    margin-top: 60%;
+    text-align: center;
+  }
+  
+  .certs p {
+    padding: 10px 0 10px 0;
+    font-size: 3vw;
+    text-align: center;
+  }
+
+  .cert-box {
+    width: 80%;
+  }
+
+  .prev, .next {
+    top: 55%;
+  }
+
+  .portfolio {
+    height: 120vh;
+  }
+
+  .portfolio h2 {
+    font-size: 7.5vw;
+  }
+
+  .portfolio-content {
+    flex-direction: column;
+  }
+
+  .project {
+    width: 250px;
+  }
+
+  .projectList {
+    margin-top: 30px;
+  }
+
+  .viewAllBtn {
+    margin-right: 45px;
+  }
+}

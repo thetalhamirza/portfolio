@@ -3,12 +3,14 @@
 // Detect scroll and adjust opacity of the home page h1 text
 window.addEventListener('scroll', () => {
     const homeText = document.querySelector('.home h1');
+    const NavText = document.querySelector('.nav h3');
     const scrollY = window.scrollY;
     const fadePoint = 250  ; // Point at which the fading starts
 
     // Calculate opacity based on scroll position
     const opacity = Math.max(0, 1 - scrollY / fadePoint);
     homeText.style.opacity = opacity;
+    NavText.style.opacity = opacity;
 });
 
 
@@ -110,3 +112,13 @@ window.addEventListener('load', () => {
 });
 
 
+const toggleSymbol = document.getElementById('toggle-symbol');
+const nav = document.querySelector('.nav');
+
+nav.addEventListener('mouseenter', () => {
+    toggleSymbol.innerHTML = '&lt;'; // Changes '>' to '<'
+});
+
+nav.addEventListener('mouseleave', () => {
+    toggleSymbol.innerHTML = '&gt;'; // Reverts back to '>'
+});
