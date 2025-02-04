@@ -561,7 +561,7 @@ img {
   }
 
   .portfolio h2 {
-    font-size: 7.5vw;
+    font-size: 2.5rem;
   }
 
   .portfolio-content {
@@ -579,4 +579,35 @@ img {
   .viewAllBtn {
     margin-right: 45px;
   }
+
+  .skill {
+    width: 30%;
+  }
+
+  .skill img {
+    max-width: 70%;
+  }
+
+  .learning h2 {
+    font-size: 7vw;
+  }
+
+  .learning p {
+    font-size: 3vw;
+    max-width: 75%;
+  }
+
+  .contact h2 {
+    font-size: 7.5vw;
+  }
+
+  .contact p {
+    font-size: 3vw;
+    max-width: 80%;
+  }
+
+  .contact .socials {
+    font-size: 3vw;
+  }
+
 }
