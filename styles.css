@@ -3,7 +3,7 @@ body {
     font-optical-sizing: auto;
     font-style: normal;
     background-color: #0d000e;
-    /* margin: 0; */
+    margin: 0;
   }
 
 img {
@@ -480,133 +480,15 @@ img {
     0%  {background-color: #000}
     50%  {background-color: #0d000e}
     100%  {background-color: #000;}
-}
-
-
-
-@media (max-width: 768px) {  /* For tablets */
-
-
-  body {
-    margin: 0;
-  }
-
-  .home {
-    padding-left: 0;
   }
   
-  .home h1 {
-    font-size: 5.5vw;
-    text-align: center;
-    line-height: 100vw;
-    padding: 0 10px;
-  }
-  .navbar {
-    flex-direction: column; /* Stack navbar links vertically */
-  }
-  /* .project {
-    padding: 10px;
-  } */
-
-  .about p {
-    max-width: 75%;
-  }
-
-  .scroll-dots {
-    right: 10px;
-  }
-
-  .certs {
-    flex-direction: column;
-    padding-left: 0;
-  }
-
-  .certs h2 {
-    margin-top: 30%;
-    text-align: center;
-    font-size: 7vw;
-  }
   
-  .certs p {
-    padding: 10px 0 10px 0;
-    font-size: 2vw;
-    text-align: center;
-  }
-
-  .cert-box {
-    width: 55%;
-  }
-
-  .prev, .next {
-    top: 65%;
-  }
-
-  .portfolio {
-    height: 120vh;
-  }
-
-  .portfolio h2 {
-    font-size: 2.5rem;
-  }
-
-  .portfolio-content {
-    flex-direction: column;
-  }
-  
-  .project {
-    width: 250px;
-  }
-  
-  .projectList {
-    margin-top: 30px;
-    align-items: center;
-  }
-  
-  .viewAllBtn {
-    margin-right: 0;
-  }
-  
-  .skill {
-    width: 20%;
-  }
-
-  .skill img {
-    max-width: 60%;
-  }
-
-  .learning h3 {
-    font-size: 2vw;
-  }
-
-  .learning h2 {
-    font-size: 6vw;
-  }
-
-  .learning p {
-    font-size: 2vw;
-    max-width: 75%;
-  }
-
-  .contact h2 {
-    font-size: 5.5vw;
-  }
-
-  .contact p {
-    font-size: 2vw;
-    max-width: 80%;
-  }
-
-  .contact .socials {
-    font-size: 2vw;
-  }
-
-}
 
 @media (max-width: 480px) {  /* For smartphones */
   
-  body {
+  /* body {
     margin: 0;
-  }
+  } */
 
   .home {
     padding-left: 0;
@@ -615,7 +497,7 @@ img {
   .home h1 {
     font-size: 8vw;
     text-align: center;
-    line-height: 100vw;
+    line-height: 120vw;
     padding: 0 10px;
   }
   .navbar {
