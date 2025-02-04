@@ -24,3 +24,14 @@ footer {
 .social-links a:hover {
     color: #1dd1a1;
 }
+
+
+@media (max-width: 480px) {
+    .footer-container p {
+        font-size: 2vw;
+    }
+
+    .social-links a {
+        font-size: 2vw;
+    }
+}
