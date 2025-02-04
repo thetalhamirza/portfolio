@@ -661,6 +661,10 @@ body {
   .portfolio h2 {
     font-size: 2.5rem;
   }
+  
+  .portfolio p {
+    font-size: 3vw;
+  }
 
   .portfolio-content {
     flex-direction: column;
@@ -674,9 +678,6 @@ body {
     margin-top: 30px;
   }
 
-  .viewAllBtn {
-    margin-right: 45px;
-  }
 
   .skill {
     width: 30%;
