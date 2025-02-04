@@ -485,21 +485,121 @@ img {
 
 
 @media (max-width: 768px) {  /* For tablets */
-  .home h1 {
-    font-size: 6vw;
-  }
-  .about p {
-    font-size: 1rem;
-    padding: 10px;
-  }
-  .cert-images img.active {
-    width: 100%; /* Full-width images */
+
+
+  body {
     margin: 0;
   }
 
-  .skill {
-    width: 50%; /* Two items per row on tablets */
+  .home {
+    padding-left: 0;
   }
+  
+  .home h1 {
+    font-size: 5.5vw;
+    text-align: center;
+    line-height: 100vw;
+    padding: 0 10px;
+  }
+  .navbar {
+    flex-direction: column; /* Stack navbar links vertically */
+  }
+  /* .project {
+    padding: 10px;
+  } */
+
+  .about p {
+    max-width: 75%;
+  }
+
+  .scroll-dots {
+    right: 10px;
+  }
+
+  .certs {
+    flex-direction: column;
+    padding-left: 0;
+  }
+
+  .certs h2 {
+    margin-top: 30%;
+    text-align: center;
+    font-size: 7vw;
+  }
+  
+  .certs p {
+    padding: 10px 0 10px 0;
+    font-size: 2vw;
+    text-align: center;
+  }
+
+  .cert-box {
+    width: 55%;
+  }
+
+  .prev, .next {
+    top: 65%;
+  }
+
+  .portfolio {
+    height: 120vh;
+  }
+
+  .portfolio h2 {
+    font-size: 2.5rem;
+  }
+
+  .portfolio-content {
+    flex-direction: column;
+  }
+  
+  .project {
+    width: 250px;
+  }
+  
+  .projectList {
+    margin-top: 30px;
+    align-items: center;
+  }
+  
+  .viewAllBtn {
+    margin-right: 0;
+  }
+  
+  .skill {
+    width: 20%;
+  }
+
+  .skill img {
+    max-width: 60%;
+  }
+
+  .learning h3 {
+    font-size: 2vw;
+  }
+
+  .learning h2 {
+    font-size: 6vw;
+  }
+
+  .learning p {
+    font-size: 2vw;
+    max-width: 75%;
+  }
+
+  .contact h2 {
+    font-size: 5.5vw;
+  }
+
+  .contact p {
+    font-size: 2vw;
+    max-width: 80%;
+  }
+
+  .contact .socials {
+    font-size: 2vw;
+  }
+
 }
 
 @media (max-width: 480px) {  /* For smartphones */
@@ -515,6 +615,7 @@ img {
   .home h1 {
     font-size: 8vw;
     text-align: center;
+    line-height: 100vw;
     padding: 0 10px;
   }
   .navbar {
@@ -549,7 +650,7 @@ img {
   }
 
   .cert-box {
-    width: 80%;
+    width: 77%;
   }
 
   .prev, .next {
@@ -586,6 +687,10 @@ img {
 
   .skill img {
     max-width: 70%;
+  }
+
+  .learning h3 {
+    font-size: 4vw;
   }
 
   .learning h2 {
