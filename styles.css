@@ -622,8 +622,12 @@ body {
     padding: 10px;
   } */
 
+  .about h1 {
+    font-size: 35pt;
+  }
+
   .about p {
-    font-size: 15pt;
+    font-size: 12pt;
     max-width: 85%;
   }
 
