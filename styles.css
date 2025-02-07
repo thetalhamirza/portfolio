@@ -153,6 +153,7 @@ img {
   font-size: 17pt;
   max-width: 700px;
   color: #000000;
+  font-weight: 240;
 }
 
 
@@ -281,6 +282,7 @@ img {
   font-size: 17pt;
   max-width: 600px;
   color: #000000;
+  font-weight: 240;
 }
 
 .portfolio-content {
@@ -415,6 +417,7 @@ img {
   font-size: 17pt;
   max-width: 600px;
   color: #000000;
+  font-weight: 240;
 }
 
 .contact .socials {
@@ -486,27 +489,31 @@ img {
 @media (max-width: 768px) {  /* For tablets */
 
 
-body {
-  margin: 0;
-}
+  .home {
+    padding-left: 0;
+  }
+  
+  .home h1 {
+    font-size: 28pt;
+    text-align: center;
+    line-height: 120vw;
+    padding: 0 10px;
+  }
+  .navbar {
+    flex-direction: column; /* Stack navbar links vertically */
+  }
+  /* .project {
+    padding: 10px;
+  } */
 
-.home {
-  padding-left: 0;
-}
+  .about h2 {
+    font-size: 35pt;
+  }
 
-.home h1 {
-  font-size: 5.5vw;
-  text-align: center;
-  line-height: 100vw;
-  padding: 0 10px;
-}
-.navbar {
-  flex-direction: column; /* Stack navbar links vertically */
-}
-
-.about p {
-  max-width: 75%;
-}
+  .about p {
+    font-size: 12pt;
+    max-width: 85%;
+  }
 
   .scroll-dots {
     right: 10px;
@@ -518,83 +525,93 @@ body {
   }
 
   .certs h2 {
-    margin-top: 30%;
+    font-size: 30pt;
+    margin-top: 60%;
     text-align: center;
-    font-size: 7vw;
   }
   
   .certs p {
     padding: 10px 0 10px 0;
-    font-size: 2vw;
+    font-size: 11pt;
     text-align: center;
   }
 
   .cert-box {
-    width: 55%;
+    width: 80%;
   }
 
   .prev, .next {
-    top: 65%;
+    top: 55%;
   }
 
   .portfolio {
-    height: 120vh;
+    height: 140vh;
   }
 
   .portfolio h2 {
-    font-size: 2.5rem;
+    font-size: 35pt;
+  }
+  
+  .portfolio p {
+    font-size: 13pt;
   }
 
   .portfolio-content {
     flex-direction: column;
   }
-  
+
   .project {
-    width: 250px;
+    width: 80%;
   }
-  
+
+  .project h3 {
+    font-size: 15pt;
+  }
+
+  .project p {
+    font-size: 12pt;
+  }
+
   .projectList {
     margin-top: 30px;
-    align-items: center;
   }
-  
-  .viewAllBtn {
-    margin-right: 0;
-  }
-  
+
+
   .skill {
-    width: 20%;
+    width: 30%;
   }
 
   .skill img {
-    max-width: 60%;
+    max-width: 70%;
   }
 
   .learning h3 {
-    font-size: 2vw;
+    font-size: 13pt;
   }
 
   .learning h2 {
-    font-size: 6vw;
+    font-size: 30pt;
+    text-align: center;
   }
 
   .learning p {
-    font-size: 2vw;
+    font-size: 11pt;
     max-width: 75%;
   }
 
   .contact h2 {
-    font-size: 5.5vw;
+    font-size: 35pt;
   }
 
   .contact p {
-    font-size: 2vw;
+    font-size: 13pt;
     max-width: 80%;
   }
 
   .contact .socials {
-    font-size: 2vw;
+    font-size: 13pt;
   }
+
 
 }
 
@@ -622,8 +639,8 @@ body {
     padding: 10px;
   } */
 
-  .about h1 {
-    font-size: 30pt;
+  .about h2 {
+    font-size: 35pt;
   }
 
   .about p {
@@ -641,7 +658,7 @@ body {
   }
 
   .certs h2 {
-    font-size: 35pt;
+    font-size: 30pt;
     margin-top: 60%;
     text-align: center;
   }
@@ -661,15 +678,15 @@ body {
   }
 
   .portfolio {
-    height: 120vh;
+    height: 140vh;
   }
 
   .portfolio h2 {
-    font-size: 40pt;
+    font-size: 35pt;
   }
   
   .portfolio p {
-    font-size: 15pt;
+    font-size: 13pt;
   }
 
   .portfolio-content {
@@ -677,7 +694,15 @@ body {
   }
 
   .project {
-    width: 250px;
+    width: 80%;
+  }
+
+  .project h3 {
+    font-size: 15pt;
+  }
+
+  .project p {
+    font-size: 12pt;
   }
 
   .projectList {
@@ -698,17 +723,17 @@ body {
   }
 
   .learning h2 {
-    font-size: 45pt;
+    font-size: 30pt;
     text-align: center;
   }
 
   .learning p {
-    font-size: 13pt;
+    font-size: 11pt;
     max-width: 75%;
   }
 
   .contact h2 {
-    font-size: 45pt;
+    font-size: 35pt;
   }
 
   .contact p {
