@@ -115,7 +115,8 @@ img {
 }
 
 .home h1 {
-  font-size: 45pt;
+  /* font-size: 45pt; */
+  font-size: 35pt;
   background: linear-gradient(90deg, #9d4edd, #3a0ca3);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -141,7 +142,8 @@ img {
 
 
 .about h2 {
-  font-size: 45pt;
+  /* font-size: 45pt; */
+  font-size: 35pt;
   /* color: #000000; */
   background: linear-gradient(90deg, #9d4edd, #3a0ca3);
   background-clip: text;
@@ -150,7 +152,8 @@ img {
 }
 
 .about p {
-  font-size: 17pt;
+  /* font-size: 17pt; */
+  font-size: 15pt;
   max-width: 700px;
   color: #000000;
   font-weight: 320;
@@ -166,14 +169,16 @@ img {
 }
 
 .certs h2 {
-  font-size: 45pt;
+  /* font-size: 45pt; */
+  font-size: 35pt;
   color: white;
   padding-right: 7%;
 }
 
 .certs p {
   padding-top: 30px;
-  font-size: 14pt;
+  /* font-size: 14pt; */
+  font-size: 12pt;
 }
 
 .certs a {
@@ -354,18 +359,19 @@ img {
   align-items: center;
   justify-content: center;
   /* padding-left: 10%; */
-  height: 100vh;
+  height: 120vh;
   flex-direction: column;
 }
 
 .learning h2 {
-  font-size: 45pt;
+  /* font-size: 45pt; */
+  font-size: 35pt;
   color: white;
 }
 
 .learning p {
   text-align: center;
-  font-size: 15pt;
+  font-size: 12pt;
   max-width: 500px;
   color: white;
 }
