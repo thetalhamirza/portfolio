@@ -116,7 +116,7 @@ img {
 
 .home h1 {
   /* font-size: 45pt; */
-  font-size: 35pt;
+  font-size: 3rem;
   background: linear-gradient(90deg, #9d4edd, #3a0ca3);
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -143,7 +143,7 @@ img {
 
 .about h2 {
   /* font-size: 45pt; */
-  font-size: 35pt;
+  font-size: 3rem;
   /* color: #000000; */
   background: linear-gradient(90deg, #9d4edd, #3a0ca3);
   background-clip: text;
@@ -153,10 +153,23 @@ img {
 
 .about p {
   /* font-size: 17pt; */
-  font-size: 15pt;
+  font-size: 1.3rem;
   max-width: 700px;
   color: #000000;
-  font-weight: 320;
+  /* font-weight: 320; */
+  font-weight: 400;
+  z-index: 10;
+}
+
+.about a {
+  color: #000;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+}
+.about a:visited {
+  color: #000;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
 }
 
 
@@ -170,7 +183,7 @@ img {
 
 .certs h2 {
   /* font-size: 45pt; */
-  font-size: 35pt;
+  font-size: 3rem;
   color: white;
   padding-right: 7%;
 }
@@ -178,7 +191,7 @@ img {
 .certs p {
   padding-top: 30px;
   /* font-size: 14pt; */
-  font-size: 12pt;
+  font-size: 1rem;
 }
 
 .certs a {
@@ -191,7 +204,7 @@ img {
 
 .cert-box {
   width: 65%;
-  height: 80%;
+  height: 100%;
   background-color: rgba(113, 0, 243, 0);
   flex-direction: column;
   position: relative;
@@ -275,7 +288,7 @@ img {
 
 
 .portfolio h2 {
-  font-size: 45pt;
+  font-size: 3.5rem;
   /* color: #000000; */
   background: linear-gradient(90deg, #9d4edd, #3a0ca3);
   background-clip: text;
@@ -284,7 +297,7 @@ img {
 }
 
 .portfolio p {
-  font-size: 17pt;
+  font-size: 1.5rem;
   max-width: 600px;
   color: #000000;
   font-weight: 320;
@@ -320,6 +333,7 @@ img {
   text-align: center;
   margin-bottom: 25px;
   transition: 1000ms ease;
+  z-index: 10;
 }
 
 .project p {
@@ -331,11 +345,18 @@ img {
 }
 
 .project a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  /* padding: 10px 10px 0px 10px; */
+  /* margin-top: 30px; */
   text-decoration: none;
 }
 .project a:visited {
   text-decoration: none;
 }
+
+
 
 .viewAllBtn {
   display: flex;
@@ -365,13 +386,13 @@ img {
 
 .learning h2 {
   /* font-size: 45pt; */
-  font-size: 35pt;
+  font-size: 3rem;
   color: white;
 }
 
 .learning p {
   text-align: center;
-  font-size: 12pt;
+  font-size: 1.1rem;
   max-width: 500px;
   color: white;
 }
@@ -415,19 +436,19 @@ img {
 
 
 .contact h2 {
-  font-size: 45pt;
+  font-size: 3.5rem;
   color: #000000;
 }
 
 .contact p {
-  font-size: 17pt;
+  font-size: 1.4rem;
   max-width: 600px;
   color: #000000;
   font-weight: 320;
 }
 
 .contact .socials {
-  font-size: 13pt;
+  font-size: 1.1rem;
   
 }
 
@@ -715,6 +736,9 @@ img {
     margin-top: 30px;
   }
 
+  .viewAllBtn {
+    margin-right: 30px;
+  }
 
   .skill {
     width: 30%;
