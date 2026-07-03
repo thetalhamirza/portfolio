@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talha Mirza — Automation Specialist</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Arimo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png?v=2">
+  <link rel="apple-touch-icon" href="apple-icon.png?v=2">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Talha.</a>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://www.linkedin.com/in/thetalhamirza/" target="_blank" class="nav-link nav-social" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/thetalhamirza" target="_blank" class="nav-link nav-social" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.upwork.com/freelancers/talhamirza000" target="_blank" class="nav-link nav-social" aria-label="Upwork">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.476-2.179.005-.023c.377-1.386 1.625-2.252 3.074-2.252 1.744 0 3.158 1.376 3.158 3.107 0 1.722-1.414 3.107-3.141 3.574zM18.561 4.5c-2.005 0-3.806.999-4.963 2.253L13.18 4.5h-2.679v7.759c0 1.551-.851 2.694-2.241 2.694-1.389 0-2.241-1.143-2.241-2.694V4.5H3.16v7.759c0 3.012 1.984 4.859 4.341 4.859 2.358 0 4.341-1.847 4.341-4.859v-2.12c.853.89 2.003 1.528 3.268 1.528 2.723 0 4.89-2.164 4.89-4.868S21.284 4.5 18.561 4.5z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/923202922912" target="_blank" class="btn btn-outline nav-cta">Let's talk</a>
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="hero-grid"></div>
+      <div><div class="hero-blob hero-blob-1"></div></div>
+      <div><div class="hero-blob hero-blob-2"></div></div>
+      <div><div class="hero-blob hero-blob-3"></div></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-left">
+        <div class="hero-status">
+          <span class="status-dot"></span>
+          <span class="status-text">Currently building</span>
+          <span class="status-project" id="statusProject">AI Workflows</span>
+        </div>
+        <h1 class="hero-title" data-reveal-blur data-delay="1">
+          I build systems that <span class="hero-curl">work</span>
+          <span class="hero-highlight">while you&nbsp;sleep.</span>
+        </h1>
+        <p class="hero-desc" data-reveal data-delay="2">
+          I build AI systems that handle the boring stuff — from LLM-powered automation and n8n workflows to custom API integrations that actually scale. Security-first mindset, clean code or no-code, and systems that run themselves so you don't have to think about them.
+        </p>
+        <div class="hero-actions" data-reveal data-delay="3">
+          <a href="#projects" class="btn btn-primary">View Projects</a>
+          <a href="https://wa.me/923202922912" target="_blank" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+    <div class="hero-right">
+        <div class="terminal" id="terminal">
+          <div class="terminal-head">
+            <button class="td td-r" aria-label="Close"></button>
+            <button class="td td-y" aria-label="Minimize"></button>
+            <button class="td td-g" aria-label="Maximize"></button>
+            <span class="terminal-title">talha@dev:~</span>
+          </div>
+          <div class="terminal-body" id="terminalBody"></div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span class="scroll-text">Scroll</span>
+      <svg width="16" height="24" viewBox="0 0 16 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 4v12M4 12l4 4 4-4"/></svg>
+    </div>
+  </section>
+
+  <!-- ═══ MARQUEE ═══ -->
+  <section class="marquee-section" id="marquee">
+    <div class="marquee-track">
+      <div class="marquee-inner">
+        <span class="marquee-item">Python</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">n8n</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">AI Agents</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Hermes Agent</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">OpenClaw</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Webhooks</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Docker</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">REST APIs</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Pinecone</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Bash</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Git</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">LLMs</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Automation</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">CI/CD</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">SQL</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Prompt&nbsp;Eng</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Workflows</span>
+      </div>
+      <div class="marquee-inner" aria-hidden="true">
+        <span class="marquee-item">Python</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">n8n</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">AI Agents</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Hermes Agent</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">OpenClaw</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Webhooks</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Docker</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">REST APIs</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Pinecone</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Bash</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Git</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">LLMs</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Automation</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">CI/CD</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">SQL</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Prompt&nbsp;Eng</span>
+        <span class="marquee-dot">-</span>
+        <span class="marquee-item">Workflows</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ⭐⭐⭐ ABOUT ⭐⭐⭐ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-label" data-reveal-blur data-delay="1">about</h2>
+        <p class="section-title" data-reveal data-delay="2">The operator behind the&nbsp;automation</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p data-reveal data-delay="3">
+            I got into automation because I'd rather spend energy on interesting problems than repeat the same task twice. These days I split my time between building AI workflows for freelance clients, studying CS at FAST, and tinkering with my homelab server.
+          </p>
+          <p data-reveal data-delay="4">
+            I think automation is at its best when you don't notice it working. Whether I'm setting up an n8n pipeline or locking down a server, the goal is the same — make it reliable, make it scale, and make sure I don't get a call at 2 AM. That quiet dependability is what I chase.
+          </p>
+          <p data-reveal data-delay="5">
+            I trained with Deloitte's Cyber team and Google's Cybersecurity Cert, so security thinking is baked into everything I do — least-privilege access, audit trails, secure configs. Not because anyone asked, but because I'd rather build things that don't break in the first place.
+          </p>
+        </div>
+        
+        <div class="about-stats">
+          <div class="stat" data-reveal data-delay="3">
+            <span class="stat-number">2</span>
+            <span class="stat-label">Clients Served</span>
+          </div>
+          <div class="stat" data-reveal data-delay="4">
+            <span class="stat-number">15+</span>
+            <span class="stat-label">AI Agents Built</span>
+          </div>
+          <div class="stat" data-reveal data-delay="5">
+            <span class="stat-number">200+</span>
+            <span class="stat-label">Hours Automated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 48" preserveAspectRatio="none">
+        <path d="M0,48 C300,0 900,48 1200,0 L1200,48 L0,48 Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+<!-- ═══ PROJECTS ═══ -->
+  <section class="projects section" id="projects">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-label" data-reveal-blur data-delay="1">projects</h2>
+        <p class="section-title" data-reveal data-delay="2">Things I've built</p>
+      </div>
+      <div class="projects-grid">
+        <!-- Self-Hosted Homelab -->
+        <div class="project-card" data-reveal data-delay="3">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <h3 class="project-title">Self-Hosted Homelab</h3>
+          <p class="project-desc">Private server infrastructure with Docker, Tailscale mesh networking, Cloudflare Tunnel, and automated deployment. Designed for secure remote access and 24/7 containerized services on bare-metal Ubuntu.</p>
+          <div class="project-tags">
+            <span class="tag">Docker</span>
+            <span class="tag">Linux</span>
+            <span class="tag">Networking</span>
+            <span class="tag">Security</span>
+          </div>
+        </div>
+        <!-- Customer Support Assistant -->
+        <div class="project-card" data-reveal data-delay="4">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+          </div>
+          <h3 class="project-title">Customer Support Assistant</h3>
+          <p class="project-desc">Automated email response system using AI to handle customer queries efficiently, reducing response time and human workload.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">LLMs</span>
+            <span class="tag">Email Automation</span>
+            <span class="tag">n8n</span>
+          </div>
+        </div>
+        <!-- Hermes Agent -->
+        <div class="project-card" data-reveal data-delay="5">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M1 9h3M1 15h3M20 9h3M20 15h3"/></svg>
+          </div>
+          <h3 class="project-title">Hermes Agent</h3>
+          <p class="project-desc">Autonomous AI assistant configured for server operations, code deployment, and workflow orchestration through natural language commands. Self-hosted instance on the homelab server.</p>
+          <div class="project-tags">
+            <span class="tag">AI</span>
+            <span class="tag">Automation</span>
+            <span class="tag">n8n</span>
+            <span class="tag">DevOps</span>
+          </div>
+        </div>
+        <!-- E-commerce Chat Agent -->
+        <div class="project-card" data-reveal data-delay="6">
+          <div class="project-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="project-title">E-commerce Chat Agent</h3>
+          <p class="project-desc">AI-powered customer support agent with Pinecone vector search for RAG, WooCommerce API integration, and streaming responses for speed.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pinecone</span>
+            <span class="tag">RAG</span>
+            <span class="tag">WooCommerce</span>
+          </div>
+        </div>
+      </div>
+      <div class="projects-footer" data-reveal data-delay="5">
+        <a href="projects.html" class="btn btn-outline">View All Projects →</a>
+      </div>
+    </div>
+  </section>
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 48" preserveAspectRatio="none">
+        <path d="M0,48 C300,0 900,48 1200,0 L1200,48 L0,48 Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+<!-- ═══ SKILLS ═══ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-label" data-reveal-blur data-delay="1">skills</h2>
+        <p class="section-title" data-reveal data-delay="2">Stack &amp; tooling</p>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group" data-reveal data-delay="3">
+          <h3 class="skill-cat-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+            Programming
+          </h3>
+          <div class="skill-list">
+            <span class="skill-tag" style="--pct:80%" data-pct="80">Python</span>
+            <span class="skill-tag" style="--pct:50%" data-pct="50">C++</span>
+            <span class="skill-tag" style="--pct:70%" data-pct="70">SQL</span>
+            <span class="skill-tag" style="--pct:50%" data-pct="50">JavaScript</span>
+            <span class="skill-tag" style="--pct:55%" data-pct="55">HTML/CSS</span>
+            <span class="skill-tag" style="--pct:72%" data-pct="72">Bash</span>
+          </div>
+        </div>
+        <div class="skill-group" data-reveal data-delay="4">
+          <h3 class="skill-cat-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="8" rx="2"/><rect x="2" y="14" width="20" height="8" rx="2"/><path d="M6 6h.01M6 18h.01"/></svg>
+            Automation &amp; AI
+          </h3>
+          <div class="skill-list">
+            <span class="skill-tag" style="--pct:90%" data-pct="90">n8n</span>
+            <span class="skill-tag" style="--pct:85%" data-pct="85">AI Agents</span>
+            <span class="skill-tag" style="--pct:70%" data-pct="70">OpenClaw</span>
+            <span class="skill-tag" style="--pct:78%" data-pct="78">LLM APIs</span>
+            <span class="skill-tag" style="--pct:82%" data-pct="82">REST APIs</span>
+            <span class="skill-tag" style="--pct:80%" data-pct="80">Webhooks</span>
+            <span class="skill-tag" style="--pct:85%" data-pct="85">Prompt Eng.</span>
+            <span class="skill-tag" style="--pct:68%" data-pct="68">Pinecone</span>
+            <span class="skill-tag" style="--pct:75%" data-pct="75">RAG</span>
+          </div>
+        </div>
+        <div class="skill-group" data-reveal data-delay="5">
+          <h3 class="skill-cat-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            Tools &amp; Platforms
+          </h3>
+          <div class="skill-list">
+            <span class="skill-tag" style="--pct:80%" data-pct="80">Git/GitHub</span>
+            <span class="skill-tag" style="--pct:75%" data-pct="75">Docker</span>
+            <span class="skill-tag" style="--pct:82%" data-pct="82">Linux</span>
+            <span class="skill-tag" style="--pct:60%" data-pct="60">VirtualBox</span>
+            <span class="skill-tag" style="--pct:72%" data-pct="72">CI/CD</span>
+            <span class="skill-tag" style="--pct:78%" data-pct="78">Hermes Agent</span>
+          </div>
+        </div>
+        <div class="skill-group" data-reveal data-delay="6">
+          <h3 class="skill-cat-title">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Security &amp; Networking
+          </h3>
+          <div class="skill-list">
+            <span class="skill-tag" style="--pct:70%" data-pct="70">Nmap</span>
+            <span class="skill-tag" style="--pct:65%" data-pct="65">Wireshark</span>
+            <span class="skill-tag" style="--pct:60%" data-pct="60">Burp Suite</span>
+            <span class="skill-tag" style="--pct:55%" data-pct="55">Metasploit</span>
+            <span class="skill-tag" style="--pct:72%" data-pct="72">Kali Linux</span>
+            <span class="skill-tag" style="--pct:65%" data-pct="65">tcpdump</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 48" preserveAspectRatio="none">
+        <path d="M0,48 C300,0 900,48 1200,0 L1200,48 L0,48 Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+  <!-- ═══ EXPERIENCE & CERTIFICATIONS ═══ -->
+  <section class="journey section" id="journey">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-label" data-reveal-blur data-delay="1">journey</h2>
+        <p class="section-title" data-reveal data-delay="2">Experience &amp; credentials</p>
+      </div>
+      <div class="journey-grid">
+        <div class="journey-col">
+          <h3 class="journey-col-title" data-reveal data-delay="3">Experience</h3>
+          <div class="timeline">
+            <div class="timeline-item journey-clickable" data-reveal data-delay="4" data-type="exp" data-title="AI Specialist" data-sub="Upwork · Remote · 2025 — Present" data-detail="Building AI-powered workflow automations, API integrations, chatbot/LLM implementations, and process optimization for freelance clients on Upwork. Projects include e-commerce customer support agents, automated email response systems, and data pipeline automation.">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2025 — Present</span>
+                <h4 class="timeline-title">AI Specialist</h4>
+                <p class="timeline-sub">Upwork · Remote</p>
+                <p class="timeline-desc">Building AI-powered workflow automations, API integrations, chatbot/LLM implementations, and process optimization for clients.</p>
+              </div>
+            </div>
+            <div class="timeline-item journey-clickable" data-reveal data-delay="5" data-type="exp" data-title="Cybersecurity Training" data-sub="Self-Directed · 2024 — Present" data-detail="Self-directed cybersecurity training encompassing Google Cybersecurity Cert, CompTIA Security+, PortSwigger Academy labs, and TryHackMe challenges. Focus on network security, threat analysis, vulnerability assessment, and penetration testing methodologies.">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2024 — Present</span>
+                <h4 class="timeline-title">Cybersecurity Training</h4>
+                <p class="timeline-sub">Self-Directed</p>
+                <p class="timeline-desc">Actively pursuing Google Cybersecurity Cert, CompTIA Security+, PortSwigger Academy, and TryHackMe labs.</p>
+              </div>
+            </div>
+            <div class="timeline-item journey-clickable" data-reveal data-delay="6" data-type="exp" data-title="Exhibit Developer" data-sub="The Dawood Foundation · 2023" data-detail="Developed interactive science exhibits and programmed Arduino-based prototypes for public engagement at The Dawood Foundation's science centre. Combined hardware and software skills to create hands-on learning experiences.">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <span class="timeline-date">2023</span>
+                <h4 class="timeline-title">Exhibit Developer</h4>
+                <p class="timeline-sub">The Dawood Foundation</p>
+                <p class="timeline-desc">Developed interactive exhibits and programmed Arduino-based prototypes for public engagement.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="journey-col">
+          <h3 class="journey-col-title" data-reveal data-delay="3">Certifications</h3>
+          <div class="timeline">
+            <div class="timeline-item compact" data-reveal data-delay="4">
+              <div class="timeline-dot cert-dot-green"></div>
+              <div class="timeline-content">
+                <a href="https://certificates.cs50.io/99e8c723-9712-45b3-828d-c64f704625b6.pdf?size=letter" target="_blank" class="timeline-title-link"><h4 class="timeline-title">CS50's Python</h4></a>
+                <p class="timeline-sub">Harvard · 2024</p>
+                <p class="timeline-desc">Introduction to programming with Python — covers loops, data structures, OOP, and testing fundamentals.</p>
+              </div>
+            </div>
+            <div class="timeline-item compact" data-reveal data-delay="5">
+              <div class="timeline-dot cert-dot-green"></div>
+              <div class="timeline-content">
+                <a href="https://community.n8n.io/u/talhamirza/summary" target="_blank" class="timeline-title-link"><h4 class="timeline-title">n8n Level 1 Certified</h4></a>
+                <p class="timeline-sub">n8n · 2024</p>
+                <p class="timeline-desc">Foundational certification in workflow automation, node configuration, and API integration within n8n.</p>
+              </div>
+            </div>
+            <div class="timeline-item compact" data-reveal data-delay="6">
+              <div class="timeline-dot cert-dot-yellow"></div>
+              <div class="timeline-content">
+                <a href="https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/E9pA6qsdbeyEkp3ti_9PBTqmSxAf6zZTseP_6a42a62939b118f72fdfe1aa_1782753920680_completion_certificate.pdf" target="_blank" class="timeline-title-link"><h4 class="timeline-title">Deloitte Cyber Job Simulation</h4></a>
+                <p class="timeline-sub">Forage · 2024</p>
+                <p class="timeline-desc">Virtual internship simulating real-world cybersecurity tasks — incident response, threat analysis, and risk assessment.</p>
+              </div>
+            </div>
+            <div class="timeline-item compact" data-reveal data-delay="7">
+              <div class="timeline-dot cert-dot-blue"></div>
+              <div class="timeline-content">
+                <a href="https://www.coursera.org/account/accomplishments/verify/9IYX1G46CGGY" target="_blank" class="timeline-title-link"><h4 class="timeline-title">Google Cybersecurity Cert</h4></a>
+                <p class="timeline-sub">In Progress</p>
+                <p class="timeline-desc">3 of 8 courses completed — Foundations of Cybersecurity, Managing Security Risks, and Network Security.</p>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="journey-col-title" data-reveal data-delay="3" style="margin-top: 36px;">Education</h3>
+          <div class="timeline">
+            <div class="timeline-item compact journey-clickable" data-reveal data-delay="4" data-type="edu" data-title="BS Computer Science" data-sub="FAST NUCES · 2024–2028" data-detail="Currently in 4th semester at FAST National University of Computer and Emerging Sciences, Karachi. Competed in Coder's Cup '24 (7th place) and Procom CTF '25. Coursework includes data structures, algorithms, operating systems, database systems, and computer networks.">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">BS Computer Science</h4>
+                <p class="timeline-sub">FAST NUCES · 2024–2028</p>
+                <p class="timeline-desc">Coder's Cup '24 (7th) · Procom CTF '25</p>
+              </div>
+            </div>
+            <div class="timeline-item compact journey-clickable" data-reveal data-delay="5" data-type="edu" data-title="A-Levels" data-sub="Cedar College · 2022–2024" data-detail="Completed A-Levels in Pre-Engineering & Computer Science at Cedar College, Karachi. Achieved A* + 3As across the programme.">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h4 class="timeline-title">A-Levels</h4>
+                <p class="timeline-sub">Cedar College · 2022–2024</p>
+                <p class="timeline-desc">A* + 3As · Pre-Engineering &amp; Computer Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <div class="section-divider" aria-hidden="true">
+      <svg viewBox="0 0 1200 48" preserveAspectRatio="none">
+        <path d="M0,48 C300,0 900,48 1200,0 L1200,48 L0,48 Z" fill="var(--bg)"/>
+      </svg>
+    </div>
+<!-- ═══ CONTACT ═══ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-label" data-reveal-blur data-delay="1">contact</h2>
+        <p class="section-title" data-reveal data-delay="2">Let's build something reliable</p>
+      </div>
+      <div class="contact-inner">
+        <p class="contact-desc" data-reveal data-delay="3">
+          I'm always open to collaborating on thoughtful AI systems, automation workflows,
+          or any project that values both performance and responsibility.
+        </p>
+        <div class="contact-lines" data-reveal data-delay="4">
+          <a class="contact-item" href="mailto:talhamirza.dev@gmail.com" target="_blank" data-reveal data-delay="4">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </div>
+            <span class="contact-text">talhamirza.dev</span>
+          </a>
+
+          <a class="contact-item contact-whatsapp" href="https://wa.me/923202922912" target="_blank" data-reveal data-delay="5">
+            <div class="contact-icon">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+            </div>
+            <span class="contact-text">+92 320 2922912</span>
+            <span class="contact-badge">preferred</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner" data-reveal data-delay="2">
+        <span class="footer-text">© 2026 Talha Mirza</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-text">Built with purpose</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-text">Karachi, Pakistan</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-text footer-quirk">An AI built this site, coz why not?</span>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- ═══ PROJECT MODAL ═══ -->
+  <div class="project-modal-overlay" id="projectModal">
+    <div class="project-modal">
+      <button class="modal-close" id="modalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="modal-icon" id="modalIcon"></div>
+      <h3 class="modal-title" id="modalTitle"></h3>
+      <p class="modal-desc" id="modalDesc"></p>
+      <div class="modal-tags" id="modalTags"></div>
+    </div>
+  </div>
+
+  <!-- ═══ JOURNEY DETAIL MODAL ═══ -->
+  <div class="journey-modal-overlay" id="journeyModal">
+    <div class="journey-modal">
+      <button class="modal-close" id="journeyModalClose" aria-label="Close modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="journey-modal-icon" id="journeyModalIcon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      </div>
+      <h3 class="journey-modal-title" id="journeyModalTitle"></h3>
+      <p class="journey-modal-sub" id="journeyModalSub"></p>
+      <p class="journey-modal-desc" id="journeyModalDesc"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
