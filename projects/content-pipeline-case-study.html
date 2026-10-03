@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study: AI Content Pipeline That Posts 3 Videos a Day — Talha Mirza</title>
+  <meta name="description" content="Automated organic content setup generating and posting 3 AI avatar videos daily to Instagram and TikTok using OpenClaw, Kling 3.0, and Python.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Arimo:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="/favicon.png?v=2">
+  <link rel="apple-touch-icon" href="/apple-icon.png?v=2">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">Talha.</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/#about" class="nav-link">About</a>
+        <a href="/projects" class="nav-link active">Projects</a>
+        <a href="/#skills" class="nav-link">Skills</a>
+        <a href="/#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="nav-right">
+        <a href="https://www.linkedin.com/in/thetalhamirza/" target="_blank" class="nav-link nav-social" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/thetalhamirza" target="_blank" class="nav-link nav-social" aria-label="GitHub">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.upwork.com/freelancers/talhamirza000" target="_blank" class="nav-link nav-social" aria-label="Upwork">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="12" fill="currentColor"/>
+            <path fill="var(--bg)" d="M16.26 12.75c-.71 0-1.39-.3-2-.8l.31-1.42.003-.015c.245-.9.98-1.46 1.88-1.46 1.13 0 2.05.89 2.05 2.02 0 1.12-.92 2.02-2.24 2.32zm0-5.63c-1.3 0-2.47.65-3.23 1.46l-.26-1.31H11.03v5.04c0 1.01-.55 1.75-1.46 1.75-.9 0-1.46-.74-1.46-1.75V7.27H6.25v5.04c0 1.96 1.29 3.16 2.82 3.16 1.53 0 2.82-1.2 2.82-3.16v-1.38c.55.58 1.3 1 2.12 1 1.77 0 3.18-1.4 3.18-3.16s-1.4-3.16-3.25-3.16z"/>
+          </svg>
+        </a>
+        <a href="https://wa.me/923202922912" target="_blank" class="btn btn-outline nav-cta">Let's talk</a>
+        <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">
+          <svg class="sun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+          <svg class="moon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ CASE STUDY BODY ═══ -->
+  <main class="case-study-page">
+    <div class="case-study-container">
+      
+      <!-- Back Navigation -->
+      <div class="back-nav" data-reveal>
+        <a href="/projects" class="back-link">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          Back to Projects
+        </a>
+      </div>
+
+      <!-- Header -->
+      <header class="case-header" data-reveal data-delay="1">
+        <div class="case-badges">
+          <span class="badge badge-featured">Case Study</span>
+          <span class="badge badge-rating">⭐ 5.0 Upwork Rating</span>
+          <span class="badge">OpenClaw + Kling 3.0</span>
+        </div>
+        <h1 class="case-title">An AI Content Pipeline That Posts 3 Videos a Day</h1>
+        <p class="case-subtitle">Automated Organic Content Setup for Instagram and TikTok</p>
+
+        <!-- Overview Meta Table/Grid -->
+        <div class="case-meta-grid">
+          <div class="case-meta-item">
+            <span class="case-meta-label">Role</span>
+            <span class="case-meta-value">AI Automation Developer (Solo)</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="case-meta-label">Timeline</span>
+            <span class="case-meta-value">Mar 20 – May 14, 2026 (~8 weeks)</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="case-meta-label">Client Rating</span>
+            <span class="case-meta-value">⭐⭐⭐⭐⭐ 5.0 Stars on Upwork</span>
+          </div>
+          <div class="case-meta-item">
+            <span class="case-meta-label">Core Stack</span>
+            <span class="case-meta-value">OpenClaw, Kling 3.0, Python, Discord, Meta Graph & TikTok APIs</span>
+          </div>
+        </div>
+      </header>
+
+      <!-- 1. At a Glance -->
+      <section class="cs-section" data-reveal data-delay="2">
+        <h2 class="cs-heading"><span class="cs-heading-num">01</span> At a Glance</h2>
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <span class="kpi-num">3 / day</span>
+            <span class="kpi-label">Unique AI Avatar Videos</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-num">Zero</span>
+            <span class="kpi-label">Manual Work Post-Setup</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-num">~$90/mo</span>
+            <span class="kpi-label">Estimated AI Generation Cost</span>
+          </div>
+          <div class="kpi-card">
+            <span class="kpi-num">5.0 ★</span>
+            <span class="kpi-label">Verified Client Satisfaction</span>
+          </div>
+        </div>
+        <div class="cs-card">
+          <div class="cs-list">
+            <div class="cs-list-item">
+              <span class="cs-list-icon">🎯</span>
+              <div><strong>Goal:</strong> Drive organic top-of-funnel content to promote a newly launched app with zero content staff.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">⚡</span>
+              <div><strong>Output:</strong> 3 unique videos every single day (1 per avatar account), automatically syndicated to Instagram Reels and TikTok.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">⚙️</span>
+              <div><strong>Manual work after setup:</strong> None — fully hands-off orchestration.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">💰</span>
+              <div><strong>Estimated running cost:</strong> About $90 a month in video generation plus lightweight VPS hosting.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">💬</span>
+              <div><strong>Client feedback:</strong> <em>"One of the smartest folks I've worked with on here."</em></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2. The Problem -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">02</span> The Problem</h2>
+        <div class="cs-content">
+          <p>
+            The client had just launched a new mobile app and had <strong>no content at all</strong>. In order to drive acquisition and test messaging, they needed to build social presence and audience reach from zero on both Instagram and TikTok without hiring an expensive production team.
+          </p>
+          <div class="cs-card">
+            <h3 class="cs-subheading" style="margin-top: 0;">Core Client Requirements</h3>
+            <div class="cs-list">
+              <div class="cs-list-item">
+                <span class="cs-list-icon">1</span>
+                <div><strong>Daily Organic Cadence:</strong> Continuous publishing schedule on Instagram and TikTok without missing a single day.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">2</span>
+                <div><strong>Multi-Avatar Personas:</strong> Three distinct avatar accounts, complete with blurred facial styling to maintain aesthetic consistency and privacy.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">3</span>
+                <div><strong>Seamless Product CTAs:</strong> Dynamic call-to-action cards and real app demo footage embedded into every single video.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">4</span>
+                <div><strong>Zero Human Bottlenecks:</strong> Zero hand-made editing, scripting, or manual scheduling required by human operators.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">5</span>
+                <div><strong>Complete Visibility:</strong> Real-time streaming visibility into every execution stage of the pipeline.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. The Solution -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">03</span> The Solution</h2>
+        <div class="cs-content">
+          <p>
+            I engineered a fully autonomous content production and distribution pipeline. Every morning, each avatar persona receives a tailored script, generates a high-definition talking video, overlays animated subtitles and product overlays, and publishes directly to social platforms.
+          </p>
+
+          <h3 class="cs-subheading">Step-by-Step Execution</h3>
+          <div class="cs-list">
+            <div class="cs-list-item">
+              <span class="cs-list-icon">1</span>
+              <div>A <strong>Scriptwriter agent</strong> synthesizes daily trending hooks and drafts customized scripts for each of the three avatar personas.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">2</span>
+              <div>A <strong>Video Maker agent</strong> renders each approved script into realistic video assets via Kling 3.0 API.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">3</span>
+              <div><strong>Custom Python scripts</strong> process the raw footage, applying Snapchat-style dynamic captions, facial blur shaders, and CTA graphics.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">4</span>
+              <div><strong>App demo clips</strong> are programmatically appended directly after the hook with animated download pointers.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">5</span>
+              <div><strong>Automated Multi-Channel Publishing:</strong>
+                <ul style="list-style: disc; margin-left: 20px; margin-top: 6px;">
+                  <li>Instagram Reels via the Meta Graph API</li>
+                  <li>TikTok via the TikTok Content Posting API</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="cs-subheading">Daily Output Breakdown</h3>
+          <div class="cs-table-wrapper">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>Avatar Persona</th>
+                  <th>Instagram Reels</th>
+                  <th>TikTok</th>
+                  <th>Daily Output</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Avatar 1</strong></td>
+                  <td>1 video / day</td>
+                  <td>1 video / day</td>
+                  <td>2 posted videos</td>
+                </tr>
+                <tr>
+                  <td><strong>Avatar 2</strong></td>
+                  <td>1 video / day</td>
+                  <td>1 video / day</td>
+                  <td>2 posted videos</td>
+                </tr>
+                <tr>
+                  <td><strong>Avatar 3</strong></td>
+                  <td>1 video / day</td>
+                  <td>1 video / day</td>
+                  <td>2 posted videos</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="font-size: 14px; color: var(--text-muted); font-family: var(--font-mono);">
+            💡 <strong>Total Production:</strong> 3 unique videos generated daily, syndicated across both platforms (6 automated publications/day, ~180 posts/month).
+          </p>
+        </div>
+      </section>
+
+      <!-- 4. Architecture -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">04</span> Architecture & Flow</h2>
+        <div class="cs-content">
+          <p>
+            The system architecture decouples ideation, rendering, post-processing, and publishing into independent micro-stages orchestrated through Discord and OpenClaw.
+          </p>
+
+          <div class="cs-flow">
+            <div class="cs-flow-node">
+              <span class="cs-flow-step">Stage 1</span>
+              <div>
+                <span class="cs-flow-title">Scriptwriter Agent</span>
+                <span class="cs-flow-desc">Synthesizes trend data from ViewTrack & drafts prompt-aligned scripts</span>
+              </div>
+            </div>
+            <div class="cs-flow-arrow">↓</div>
+            <div class="cs-flow-node">
+              <span class="cs-flow-step">Stage 2</span>
+              <div>
+                <span class="cs-flow-title">Video Maker Agent</span>
+                <span class="cs-flow-desc">Renders realistic avatar footage via Kling 3.0 API</span>
+              </div>
+            </div>
+            <div class="cs-flow-arrow">↓</div>
+            <div class="cs-flow-node">
+              <span class="cs-flow-step">Stage 3</span>
+              <div>
+                <span class="cs-flow-title">Post-Processing Scripts (Python)</span>
+                <span class="cs-flow-desc">Injects dynamic word-level captions, facial blurring, & CTA overlays</span>
+              </div>
+            </div>
+            <div class="cs-flow-arrow">↓</div>
+            <div class="cs-flow-node">
+              <span class="cs-flow-step">Stage 4</span>
+              <div>
+                <span class="cs-flow-title">App Demo Stitching</span>
+                <span class="cs-flow-desc">Programmatically splices app footage and call-to-action end cards</span>
+              </div>
+            </div>
+            <div class="cs-flow-arrow">↓</div>
+            <div class="cs-flow-node">
+              <span class="cs-flow-step">Stage 5</span>
+              <div>
+                <span class="cs-flow-title">API Publishing</span>
+                <span class="cs-flow-desc">Direct dispatch to Meta Graph API (Instagram) & TikTok Content Posting API</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="cs-card">
+            <div class="cs-list">
+              <div class="cs-list-item">
+                <span class="cs-list-icon">🤖</span>
+                <div><strong>Framework:</strong> Built on OpenClaw, orchestrating LLM subagents and worker tasks with Discord as the central command bus.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">📡</span>
+                <div><strong>Live Visibility:</strong> The client monitors real-time logs, generated previews, and status updates directly in a dedicated Discord channel.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">⏰</span>
+                <div><strong>Scheduling:</strong> Multi-tiered cron architecture where every step operates in isolated execution blocks.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. The Hardest Part -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">05</span> The Hardest Part: Cron Jobs & Context Limits</h2>
+        <div class="cs-content">
+          <div class="cs-card">
+            <h3 class="cs-subheading" style="margin-top: 0; color: #ef4444;">⚠️ The Engineering Problem</h3>
+            <p>
+              Early on, OpenClaw ran the entire end-to-end generation lifecycle inside a <strong>single monolithic cron job</strong>. Because script generation, video rendering polling, subtitle generation, and video encoding produced massive log outputs and long-running context, the AI models frequently hit their <strong>context limits</strong>.
+            </p>
+            <p>
+              When context overflows occurred, the worker dropped tasks midway through rendering, leading to silent failures and wasted compute credits.
+            </p>
+
+            <h3 class="cs-subheading" style="color: #22c55e;">🛠️ The Architecture Fix</h3>
+            <div class="cs-list">
+              <div class="cs-list-item">
+                <span class="cs-list-icon">✓</span>
+                <div><strong>Decoupled Multi-Cron Pipeline:</strong> Split the pipeline into distinct, independent cron jobs.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">✓</span>
+                <div><strong>Deterministic Isolation:</strong> Assigned each worker job exactly <em>one deterministic task</em> (e.g. Scripting $\to$ Render Poll $\to$ Subtitle Synthesis $\to$ Upload).</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">✓</span>
+                <div><strong>Bounded State Hand-offs:</strong> Passed clean state files on disk between stages rather than accumulating runtime LLM memory.</div>
+              </div>
+            </div>
+
+            <h3 class="cs-subheading">📈 The Result</h3>
+            <ul style="list-style: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+              <li>Runs complete seamlessly every day with zero task drops.</li>
+              <li>Failures are pinpointed instantly to an exact, isolated step.</li>
+              <li>Drastically reduced LLM token costs per execution cycle.</li>
+            </ul>
+
+            <div class="cs-callout">
+              <span class="cs-callout-lesson">💡 Core Engineering Rule: "One AI, one job only."</span>
+              <p style="margin-top: 6px; font-size: 13px; color: var(--text-muted);">
+                Keeping agent scopes tightly bounded and deterministic is the single most important factor for production reliability.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Extra Features -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">06</span> Extra Features & Optimizations</h2>
+        <div class="cs-content">
+          <div class="cs-card">
+            <div class="cs-list">
+              <div class="cs-list-item">
+                <span class="cs-list-icon">📊</span>
+                <div><strong>ViewTrack API Integration:</strong> Continuously scrapes trending hashtags, viral sounds, and content performance to calibrate script generation.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">⚡</span>
+                <div><strong>Cost-Optimized Model Routing:</strong> Utilizes lightweight, ultra-fast LLM models for formatting and routing tasks, reserving high-tier compute solely for creative script synthesis.</div>
+              </div>
+              <div class="cs-list-item">
+                <span class="cs-list-icon">🔒</span>
+                <div><strong>Automated Daily GitHub Config Backups:</strong> System configuration, agent system prompts, and scheduler states are automatically versioned and backed up to GitHub daily.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Cost Comparison -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">07</span> Cost Comparison</h2>
+        <div class="cs-content">
+          <p>
+            Producing 90 high-quality social videos per month with manual workflows requires significant headcount and coordination. Here is how this automated pipeline compares:
+          </p>
+
+          <div class="cs-table-wrapper">
+            <table class="cs-table">
+              <thead>
+                <tr>
+                  <th>Production Model</th>
+                  <th>Estimated Monthly Cost</th>
+                  <th>Operational Overhead</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Lean Freelance Team</strong> (Scriptwriter + Editor + Scheduler)</td>
+                  <td>$2,000 – $5,000 / mo</td>
+                  <td>High (Daily management, feedback loops, delays)</td>
+                </tr>
+                <tr>
+                  <td><strong>Paid UGC Creators</strong> ($50 – $150 per video × 90 videos)</td>
+                  <td>$4,500 – $13,500 / mo</td>
+                  <td>Extreme (Talent sourcing, contracts, shipping)</td>
+                </tr>
+                <tr style="background: rgba(34, 197, 94, 0.06);">
+                  <td><strong>🚀 Automated AI Pipeline</strong></td>
+                  <td><strong>~$90 / mo</strong></td>
+                  <td><strong>Zero (100% autonomous background execution)</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="cs-card" style="margin-top: 20px;">
+            <h3 class="cs-subheading" style="margin-top: 0;">Cost Breakdown for this Pipeline:</h3>
+            <ul style="list-style: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
+              <li><strong>Kling 3.0 Video Generation:</strong> ~$1 per video (~$90 / month for 90 videos)</li>
+              <li><strong>AI Models & LLM APIs:</strong> Negligible ($2 – $5 / month using tiered model routing)</li>
+              <li><strong>Infrastructure Hosting:</strong> Mid-tier Hostinger VPS</li>
+            </ul>
+            <p style="margin-top: 12px; font-weight: 600; color: var(--text);">
+              Key Takeaway: Video generation runs at a fraction of human production costs while completely eliminating daily coordination bottlenecks.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Results -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">08</span> Results & Impact</h2>
+        <div class="cs-content">
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <span class="kpi-num">3 Videos</span>
+              <span class="kpi-label">Published Every Day</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-num">2 Platforms</span>
+              <span class="kpi-label">Instagram + TikTok</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-num">3 Accounts</span>
+              <span class="kpi-label">Unique Avatar Personas</span>
+            </div>
+            <div class="kpi-card">
+              <span class="kpi-num">100%</span>
+              <span class="kpi-label">Autonomous Reliability</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. Client Feedback -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">09</span> Client Feedback</h2>
+        <div class="review-card">
+          <div class="review-stars">
+            ★★★★★
+            <span>5.0 / 5.0 on Upwork</span>
+          </div>
+          <blockquote class="review-quote">
+            "One of the smartest folks I've worked with on here, and I've had my fair share. Talha is super prompt and just delivered high quality tasks every time. Amazing experience."
+          </blockquote>
+          <div class="review-author">
+            <div class="review-avatar">CL</div>
+            <div class="review-meta">
+              <span class="review-name">Verified Client</span>
+              <span class="review-platform">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M18.561 13.158c-1.102 0-2.135-.467-3.074-1.227l.476-2.179.005-.023c.377-1.386 1.625-2.252 3.074-2.252 1.744 0 3.158 1.376 3.158 3.107 0 1.722-1.414 3.107-3.141 3.574zM18.561 4.5c-2.005 0-3.806.999-4.963 2.253L13.18 4.5h-2.679v7.759c0 1.551-.851 2.694-2.241 2.694-1.389 0-2.241-1.143-2.241-2.694V4.5H3.16v7.759c0 3.012 1.984 4.859 4.341 4.859 2.358 0 4.341-1.847 4.341-4.859v-2.12c.853.89 2.003 1.528 3.268 1.528 2.723 0 4.89-2.164 4.89-4.868S21.284 4.5 18.561 4.5z"/></svg>
+                Upwork Verified Review
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 10. Key Takeaways -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">10</span> Key Takeaways</h2>
+        <div class="cs-card">
+          <div class="cs-list">
+            <div class="cs-list-item">
+              <span class="cs-list-icon">1</span>
+              <div><strong>Split big AI jobs into small ones:</strong> Single-purpose subagents and discrete cron workers prevent token context saturation and memory bloat.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">2</span>
+              <div><strong>Make steps deterministic:</strong> Predictable state inputs and outputs make debugging immediate and failures isolated.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">3</span>
+              <div><strong>Give clients live visibility:</strong> Providing automated Discord feeds builds trust and gives stakeholders effortless real-time monitoring.</div>
+            </div>
+            <div class="cs-list-item">
+              <span class="cs-list-icon">4</span>
+              <div><strong>Optimize model economics:</strong> Tier your model selections according to task complexity to keep operational overhead under $100/mo.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 11. Tools Used -->
+      <section class="cs-section" data-reveal>
+        <h2 class="cs-heading"><span class="cs-heading-num">11</span> Tools & Technologies</h2>
+        <div class="tools-tags">
+          <span class="tool-tag">OpenClaw</span>
+          <span class="tool-tag">Kling 3.0</span>
+          <span class="tool-tag">Python</span>
+          <span class="tool-tag">Discord Bot API</span>
+          <span class="tool-tag">Meta Graph API</span>
+          <span class="tool-tag">TikTok Content Posting API</span>
+          <span class="tool-tag">ViewTrack API</span>
+          <span class="tool-tag">GitHub Actions & Backup</span>
+          <span class="tool-tag">Hostinger VPS</span>
+        </div>
+      </section>
+
+      <!-- Bottom Call To Action -->
+      <div class="case-cta" data-reveal>
+        <h3 class="case-cta-title">Have a build running into similar limits?</h3>
+        <p class="case-cta-desc">
+          Whether you're looking to automate multi-channel content pipelines, orchestrate AI agents, or optimize reliable server workflows, let's talk.
+        </p>
+        <div class="case-cta-actions">
+          <a href="https://wa.me/923202922912" target="_blank" class="btn btn-primary">Chat on WhatsApp</a>
+          <a href="mailto:talhamirza.dev@gmail.com" class="btn btn-outline">Send an Email</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <span class="footer-text">© 2026 Talha Mirza</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-text">Built with purpose</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-text">Karachi, Pakistan</span>
+        <span class="footer-sep">·</span>
+        <span class="footer-text footer-quirk">An AI built this site, coz why not?</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/script.js"></script>
+</body>
+</html>

@@ -33,8 +33,23 @@
   /* ─── 2. Navbar scroll state + active link ─── */
   (function initNavbar() {
     const nav = document.getElementById('navbar');
+    if (!nav) return;
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+
+    // Smooth scroll for Home & Logo clicks on homepage
+    document.querySelectorAll('a[href="#hero"], a[href="#"], .nav-logo').forEach(el => {
+      el.addEventListener('click', (e) => {
+        const isHome = window.location.pathname === '/' || window.location.pathname === '' || window.location.pathname.endsWith('index.html');
+        if (isHome && (el.getAttribute('href') === '#hero' || el.getAttribute('href') === '#' || el.getAttribute('href') === '/')) {
+          e.preventDefault();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+          if (window.history && window.history.pushState) {
+            window.history.pushState(null, null, window.location.pathname);
+          }
+        }
+      });
     });
   })();
 
@@ -396,7 +411,14 @@
     });
 
     document.querySelectorAll('.project-card').forEach(card => {
-      card.addEventListener('click', () => {
+      card.addEventListener('click', (e) => {
+        if (e.target.closest('a')) return;
+        const caseStudyUrl = card.getAttribute('data-case-study');
+        if (caseStudyUrl) {
+          window.location.href = caseStudyUrl;
+          return;
+        }
+
         const title = card.querySelector('.project-title').textContent;
         const desc = card.querySelector('.project-desc').textContent;
         const iconHTML = card.querySelector('.project-icon').innerHTML;
