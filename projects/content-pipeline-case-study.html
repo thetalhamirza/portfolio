@@ -16,7 +16,7 @@
   <!-- Twitter Meta -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Case Study: AI Content Pipeline — Talha Mirza">
-  <meta name="twitter:description" content="Autonomous multi-agent system publishing 3 videos/day per avatar on Instagram & TikTok. Rated 5.0★ on Upwork.">
+  <meta name="twitter:description" content="Autonomous multi-agent system publishing 3 videos daily across 3 avatar accounts on Instagram & TikTok. Rated 5.0★ on Upwork.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -119,7 +119,7 @@
           </div>
           <div class="kpi-card">
             <span class="kpi-num">~$90/mo</span>
-            <span class="kpi-label">Estimated AI Generation Cost</span>
+            <span class="kpi-label">Video generation cost (+ hosting)</span>
           </div>
           <div class="kpi-card">
             <span class="kpi-num">5.0 ★</span>
@@ -168,7 +168,7 @@
               </div>
               <div class="cs-list-item">
                 <span class="cs-list-icon">2</span>
-                <div><strong>Multi-Avatar Personas:</strong> Three distinct avatar accounts, complete with blurred facial styling to maintain aesthetic consistency and privacy.</div>
+                <div><strong>Multi-Avatar Personas:</strong> Three distinct avatar accounts, generated with blurred faces at the client's request to maintain aesthetic consistency and privacy.</div>
               </div>
               <div class="cs-list-item">
                 <span class="cs-list-icon">3</span>
@@ -199,19 +199,19 @@
           <div class="cs-list">
             <div class="cs-list-item">
               <span class="cs-list-icon">1</span>
-              <div>A <strong>Scriptwriter agent</strong> synthesizes daily trending hooks and drafts customized scripts for each of the three avatar personas.</div>
+              <div>A <strong>Scriptwriter agent</strong> writes scripts every morning for each avatar persona.</div>
             </div>
             <div class="cs-list-item">
               <span class="cs-list-icon">2</span>
-              <div>A <strong>Video Maker agent</strong> renders each approved script into realistic video assets via Kling 3.0 API.</div>
+              <div>A <strong>Video Maker agent</strong> renders each approved script with Kling 3.0 (avatars are generated with blurred faces at the client's request).</div>
             </div>
             <div class="cs-list-item">
               <span class="cs-list-icon">3</span>
-              <div><strong>Custom Python scripts</strong> process the raw footage, applying Snapchat-style dynamic captions, facial blur shaders, and CTA graphics.</div>
+              <div><strong>Custom Python scripts</strong> add Snapchat-style captions and CTAs.</div>
             </div>
             <div class="cs-list-item">
               <span class="cs-list-icon">4</span>
-              <div><strong>App demo clips</strong> are programmatically appended directly after the hook with animated download pointers.</div>
+              <div><strong>App demo clips</strong> play right after each video along with the CTA.</div>
             </div>
             <div class="cs-list-item">
               <span class="cs-list-icon">5</span>
@@ -276,7 +276,7 @@
               <span class="cs-flow-step">Stage 1</span>
               <div>
                 <span class="cs-flow-title">Scriptwriter Agent</span>
-                <span class="cs-flow-desc">Synthesizes trend data from ViewTrack & drafts prompt-aligned scripts</span>
+                <span class="cs-flow-desc">Writes scripts every morning for each avatar persona</span>
               </div>
             </div>
             <div class="cs-flow-arrow">↓</div>
@@ -284,7 +284,7 @@
               <span class="cs-flow-step">Stage 2</span>
               <div>
                 <span class="cs-flow-title">Video Maker Agent</span>
-                <span class="cs-flow-desc">Renders realistic avatar footage via Kling 3.0 API</span>
+                <span class="cs-flow-desc">Renders videos with Kling 3.0 (avatars generated with blurred faces at client request)</span>
               </div>
             </div>
             <div class="cs-flow-arrow">↓</div>
@@ -292,7 +292,7 @@
               <span class="cs-flow-step">Stage 3</span>
               <div>
                 <span class="cs-flow-title">Post-Processing Scripts (Python)</span>
-                <span class="cs-flow-desc">Injects dynamic word-level captions, facial blurring, & CTA overlays</span>
+                <span class="cs-flow-desc">Adds Snapchat-style captions & CTAs</span>
               </div>
             </div>
             <div class="cs-flow-arrow">↓</div>
@@ -300,7 +300,7 @@
               <span class="cs-flow-step">Stage 4</span>
               <div>
                 <span class="cs-flow-title">App Demo Stitching</span>
-                <span class="cs-flow-desc">Programmatically splices app footage and call-to-action end cards</span>
+                <span class="cs-flow-desc">App demo clips play right after each video along with the CTA</span>
               </div>
             </div>
             <div class="cs-flow-arrow">↓</div>
@@ -342,30 +342,29 @@
               Early on, OpenClaw ran the entire end-to-end generation lifecycle inside a <strong>single monolithic cron job</strong>. Because script generation, video rendering polling, subtitle generation, and video encoding produced massive log outputs and long-running context, the AI models frequently hit their <strong>context limits</strong>.
             </p>
             <p>
-              When context overflows occurred, the worker dropped tasks midway through rendering, leading to silent failures and wasted compute credits.
+              When context overflows occurred, the worker dropped tasks midway through rendering.
             </p>
 
             <h3 class="cs-subheading" style="color: #22c55e;">🛠️ The Architecture Fix</h3>
             <div class="cs-list">
               <div class="cs-list-item">
                 <span class="cs-list-icon">✓</span>
-                <div><strong>Decoupled Multi-Cron Pipeline:</strong> Split the pipeline into distinct, independent cron jobs.</div>
+                <div><strong>Decoupled Multi-Cron Pipeline:</strong> Split into multiple cron jobs, one deterministic step each.</div>
               </div>
               <div class="cs-list-item">
                 <span class="cs-list-icon">✓</span>
-                <div><strong>Deterministic Isolation:</strong> Assigned each worker job exactly <em>one deterministic task</em> (e.g. Scripting $\to$ Render Poll $\to$ Subtitle Synthesis $\to$ Upload).</div>
+                <div><strong>Deterministic Isolation:</strong> Assigned each worker job exactly <em>one deterministic task</em> (e.g. Scripting → Render Poll → Subtitle Synthesis → Upload).</div>
               </div>
               <div class="cs-list-item">
                 <span class="cs-list-icon">✓</span>
-                <div><strong>Bounded State Hand-offs:</strong> Passed clean state files on disk between stages rather than accumulating runtime LLM memory.</div>
+                <div><strong>Bounded State Hand-offs:</strong> Stages hand off through state files on disk rather than accumulating runtime LLM memory.</div>
               </div>
             </div>
 
             <h3 class="cs-subheading">📈 The Result</h3>
             <ul style="list-style: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
-              <li>Runs complete seamlessly every day with zero task drops.</li>
-              <li>Failures are pinpointed instantly to an exact, isolated step.</li>
-              <li>Drastically reduced LLM token costs per execution cycle.</li>
+              <li>Failures can be traced to a single step.</li>
+              <li>Each step runs as its own small job.</li>
             </ul>
 
             <div class="cs-callout">
@@ -386,15 +385,15 @@
             <div class="cs-list">
               <div class="cs-list-item">
                 <span class="cs-list-icon">📊</span>
-                <div><strong>ViewTrack API Integration:</strong> Continuously scrapes trending hashtags, viral sounds, and content performance to calibrate script generation.</div>
+                <div><strong>ViewTrack API Integration:</strong> Tracks current trends and content performance.</div>
               </div>
               <div class="cs-list-item">
                 <span class="cs-list-icon">⚡</span>
-                <div><strong>Cost-Optimized Model Routing:</strong> Utilizes lightweight, ultra-fast LLM models for formatting and routing tasks, reserving high-tier compute solely for creative script synthesis.</div>
+                <div><strong>Low AI cost: cheap models used throughout:</strong> Cheap AI models used so AI cost is negligible.</div>
               </div>
               <div class="cs-list-item">
                 <span class="cs-list-icon">🔒</span>
-                <div><strong>Automated Daily GitHub Config Backups:</strong> System configuration, agent system prompts, and scheduler states are automatically versioned and backed up to GitHub daily.</div>
+                <div><strong>GitHub Backup:</strong> The config is backed up to GitHub daily with a shell script.</div>
               </div>
             </div>
           </div>
@@ -431,7 +430,7 @@
                 </tr>
                 <tr style="background: rgba(34, 197, 94, 0.06);">
                   <td><strong>🚀 Automated AI Pipeline</strong></td>
-                  <td><strong>~$90 / mo</strong></td>
+                  <td><strong>~$90 / mo + hosting</strong></td>
                   <td><strong>Zero (100% autonomous background execution)</strong></td>
                 </tr>
               </tbody>
@@ -442,7 +441,7 @@
             <h3 class="cs-subheading" style="margin-top: 0;">Cost Breakdown for this Pipeline:</h3>
             <ul style="list-style: disc; margin-left: 20px; color: var(--text-secondary); line-height: 1.8;">
               <li><strong>Kling 3.0 Video Generation:</strong> ~$1 per video (~$90 / month for 90 videos)</li>
-              <li><strong>AI Models & LLM APIs:</strong> Negligible ($2 – $5 / month using tiered model routing)</li>
+              <li><strong>AI Models & LLM APIs:</strong> Negligible (cheap models)</li>
               <li><strong>Infrastructure Hosting:</strong> Mid-tier Hostinger VPS</li>
             </ul>
             <p style="margin-top: 12px; font-weight: 600; color: var(--text);">
@@ -468,10 +467,6 @@
             <div class="kpi-card">
               <span class="kpi-num">3 Accounts</span>
               <span class="kpi-label">Unique Avatar Personas</span>
-            </div>
-            <div class="kpi-card">
-              <span class="kpi-num">100%</span>
-              <span class="kpi-label">Autonomous Reliability</span>
             </div>
           </div>
         </div>
@@ -520,7 +515,7 @@
             </div>
             <div class="cs-list-item">
               <span class="cs-list-icon">4</span>
-              <div><strong>Optimize model economics:</strong> Tier your model selections according to task complexity to keep operational overhead under $100/mo.</div>
+              <div><strong>Optimize model economics:</strong> Use cheap models where quality allows to keep operational overhead minimal.</div>
             </div>
           </div>
         </div>
@@ -537,7 +532,7 @@
           <span class="tool-tag">Meta Graph API</span>
           <span class="tool-tag">TikTok Content Posting API</span>
           <span class="tool-tag">ViewTrack API</span>
-          <span class="tool-tag">GitHub Actions & Backup</span>
+          <span class="tool-tag">GitHub</span>
           <span class="tool-tag">Hostinger VPS</span>
         </div>
       </section>
